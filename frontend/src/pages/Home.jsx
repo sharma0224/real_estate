@@ -23,5 +23,6 @@ export default function Home() {
           Let's get started...
         </Link>
       </div>
+      </div>
   )
 }

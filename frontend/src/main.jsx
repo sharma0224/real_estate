@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import ReactDOM from 'react-dom/client';
+=======
+import ReactDOM from 'react-dom/frontend';
+>>>>>>> d4569164bf5d4254ed4a61737e267b75e6f2c67a
 import App from './App.jsx';
 import './index.css';
 import { persistor, store } from './redux/store.js';

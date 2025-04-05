@@ -6,6 +6,7 @@ import {
   updateUserStart,
   updateUserSuccess,
   updateUserFailure,
+<<<<<<< HEAD
   deleteUserFailure,
   deleteUserStart,
   deleteUserSuccess,
@@ -13,6 +14,10 @@ import {
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
+=======
+} from '../redux/user/userSlice';
+import { useDispatch } from 'react-redux';
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -22,8 +27,11 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+<<<<<<< HEAD
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+=======
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
   const dispatch = useDispatch();
 
  
@@ -86,6 +94,7 @@ export default function Profile() {
      }
    };
 
+<<<<<<< HEAD
    const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -156,6 +165,10 @@ export default function Profile() {
 
   return (
     <div className='max-w-lg p-3 mx-auto'>
+=======
+  return (
+    <div className='p-3 max-w-lg mx-auto'>
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
     <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
     <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
     <input
@@ -169,9 +182,15 @@ export default function Profile() {
            onClick={() => fileRef.current.click()}
            src={formData.avatar || currentUser.avatar}
            alt='profile'
+<<<<<<< HEAD
            className='self-center object-cover w-24 h-24 mt-2 rounded-full cursor-pointer'
          />
          <p className='self-center text-sm'>
+=======
+           className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2'
+         />
+         <p className='text-sm self-center'>
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
            {fileUploadError ? (
              <span className='text-red-700'>
                Error Image upload (image must be less than 2 mb)
@@ -189,7 +208,11 @@ export default function Profile() {
            placeholder='username'
            defaultValue={currentUser.username}
            id='username'
+<<<<<<< HEAD
            className='p-3 border rounded-lg'
+=======
+           className='border p-3 rounded-lg'
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
            onChange={handleChange}
          />
          <input
@@ -197,7 +220,11 @@ export default function Profile() {
            placeholder='email'
            id='email'
            defaultValue={currentUser.email}
+<<<<<<< HEAD
            className='p-3 border rounded-lg'
+=======
+           className='border p-3 rounded-lg'
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
            onChange={handleChange}
          />
          <input
@@ -205,6 +232,7 @@ export default function Profile() {
             placeholder='password'
             onChange={handleChange}
             id='password'
+<<<<<<< HEAD
             className='p-3 border rounded-lg'
          />
          <button
@@ -275,6 +303,26 @@ export default function Profile() {
              </div>
            ))}
          </div>}
+=======
+            className='border p-3 rounded-lg'
+         />
+         <button
+           disabled={loading}
+           className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+         >
+           {loading ? 'Loading...' : 'Update'}
+         </button>
+    </form>
+    <div className="flex justify-between mt-5">
+      <span className='text-red-700 cursor-pointer'>Delete account</span>
+      <span className='text-red-700 cursor-pointer'>Sign out</span>
+    </div>
+    
+    <p className='text-red-700 mt-5'>{error ? error : ''}</p>
+       <p className='text-green-700 mt-5'>
+         {updateSuccess ? 'User is updated successfully!' : ''}
+       </p>
+>>>>>>> 3caa0878a05f3d547f38ae53383353bb751077a8
   </div>
   )
 }
